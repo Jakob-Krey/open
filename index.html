@@ -1,0 +1,16 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Öffnen…</title>
+<p>Wird geöffnet. Falls nichts passiert:</p>
+<p><a id="go" href="#">Ordner öffnen</a></p>
+<script>
+  const p = new URLSearchParams(location.search).get("p");
+  if (p && p.startsWith("/Users/jakobkrey/")) {
+    const url = "shortcuts://run-shortcut?name="
+      + encodeURIComponent("Ordner öffnen")
+      + "&input=text&text=" + encodeURIComponent(p);
+    document.getElementById("go").href = url;
+    location.href = url;
+  }
+</script>
