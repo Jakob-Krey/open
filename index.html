@@ -12,5 +12,6 @@
       + "&input=text&text=" + encodeURIComponent(p);
     document.getElementById("go").href = url;
     location.href = url;
+    setTimeout(() => window.close(), 1000);
   }
 </script>
