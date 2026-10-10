@@ -5,7 +5,7 @@
 <p>Wird geöffnet. Falls nichts passiert:</p>
 <p><a id="go" href="#">Ordner öffnen</a></p>
 <script>
-  const p = new URLSearchParams(location.search).get("p");
+  const p = new URLSearchParams(location.hash.slice(1)).get("p");
   if (p && p.startsWith("/Users/jakobkrey/")) {
     const url = "shortcuts://run-shortcut?name="
       + encodeURIComponent("Ordner öffnen")
